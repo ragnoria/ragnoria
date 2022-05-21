@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1abc7822bd9f28e9a62986817bf04f76",
+    "content-hash": "b2f349b864146e9645a0df6ae25d0124",
     "packages": [
         {
             "name": "brick/math",
@@ -2512,6 +2512,58 @@
                 "source": "https://github.com/bobthecow/psysh/tree/v0.11.4"
             },
             "time": "2022-05-06T12:49:14+00:00"
+        },
+        {
+            "name": "ragnoria/module-location",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ragnoria/module-location.git",
+                "reference": "c58a7e19e0f07ad46bb530e5ea33218a53faf0a1"
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ragnoria\\Location\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Adam Łożyński",
+                    "email": "lozynskiadam@gmail.com"
+                }
+            ],
+            "time": "2022-05-17T18:03:34+00:00"
+        },
+        {
+            "name": "ragnoria/module-outfit",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ragnoria/module-outfit.git",
+                "reference": "7373a56adddd97a898b23e50cb84e1183f259818"
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ragnoria\\Outfit\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Adam Łożyński",
+                    "email": "lozynskiadam@gmail.com"
+                }
+            ],
+            "time": "2022-05-21T15:13:13+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -7755,5 +7807,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }

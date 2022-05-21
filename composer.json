@@ -9,7 +9,9 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "ragnoria/module-location": "*",
+        "ragnoria/module-outfit": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -19,6 +21,16 @@
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/ragnoria/module-location.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/ragnoria/module-outfit.git"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",
