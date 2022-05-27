@@ -14,6 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/', function () {
+    return ['message' => 'it works'];
+});
+
+Route::get('/login', function (Request $request) {
+    $response = new Illuminate\Http\Response('Hello World');
+    $response->withCookie(
+        cookie(
+            name: 'ragnoria-session',
+            value: 'test',
+            domain: '.ragnoria.localhost'
+        )
+    );
+
+    return $response;
 });
