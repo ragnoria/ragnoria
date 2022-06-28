@@ -108,4 +108,22 @@ return [
 
     'password_timeout' => 10800,
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Api Auth Using Cookie Token
+    |--------------------------------------------------------------------------
+    |
+    | Configuration to authenticate incoming requests identity by cookie token.
+    |
+    */
+
+    'api' => [
+        'token_name' => 'auth',
+        'cookie' => [
+            'name' => 'auth',
+            'domain' => '.ragnoria.localhost',
+        ],
+    ],
+
 ];

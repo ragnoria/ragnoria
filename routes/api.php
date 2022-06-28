@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,15 +18,7 @@ Route::get('/', function () {
     return ['message' => 'it works'];
 });
 
-Route::get('/login', function (Request $request) {
-    $response = new Illuminate\Http\Response('Hello World');
-    $response->withCookie(
-        cookie(
-            name: 'ragnoria-session',
-            value: 'test',
-            domain: '.ragnoria.localhost'
-        )
-    );
-
-    return $response;
-});
+Route::get('/check', [AuthController::class, 'check']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');

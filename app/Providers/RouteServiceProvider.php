@@ -30,6 +30,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->routes(function () {
             Route::middleware('api')
+                ->middleware('auth.cookieToken')
                 ->domain(config('app.api_url'))
                 ->name('api.')
                 ->group(base_path('routes/api.php'));
