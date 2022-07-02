@@ -33,28 +33,32 @@ abstract class Log
         BACKGROUND_LIGHT_GREY = '47';
 
 
-    public static function log(string $msg, string $fg = self::TEXT_LIGHT_GREY, string $bg = self::BACKGROUND_BLACK): void
+    public static function log($msg, string $fg = self::TEXT_LIGHT_GREY, string $bg = self::BACKGROUND_BLACK): void
     {
+        if (!is_string($msg)) {
+            $msg = json_encode($msg);
+        }
+
         $date = date('Y-m-d H:i:s');
         echo "\e[{$fg};{$bg}m[{$date}] {$msg}\e[0m\r\n";
     }
 
-    public static function info(string $msg): void
+    public static function info($msg): void
     {
         static::log($msg, self::TEXT_LIGHT_GREY, self::BACKGROUND_BLACK);
     }
 
-    public static function warning(string $msg): void
+    public static function warning($msg): void
     {
         static::log($msg, self::TEXT_BROWN, self::BACKGROUND_BLACK);
     }
 
-    public static function error(string $msg): void
+    public static function error($msg): void
     {
         static::log($msg, self::TEXT_WHITE, self::BACKGROUND_RED);
     }
 
-    public static function success(string $msg): void
+    public static function success($msg): void
     {
         static::log($msg, self::TEXT_GREEN, self::BACKGROUND_BLACK);
     }
