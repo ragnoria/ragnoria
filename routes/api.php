@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CharacterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,9 @@ Route::get('/', function () {
     return ['message' => 'it works'];
 });
 
-Route::get('/check', [AuthController::class, 'check']);
+Route::get('/my-account', [AuthController::class, 'myAccount'])->middleware('auth');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
+
+Route::post('/character/create', [CharacterController::class, 'create'])->middleware('auth');
